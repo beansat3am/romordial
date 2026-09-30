@@ -1,4 +1,5 @@
-*.json
+bs_auto_buy*.json
+bsv2_configs/
 *.cfg
 *.log
 .env
@@ -6,3 +7,9 @@
 .tools/
 data/
 node_modules/
+.private-access/
+.wrangler/
+dist/
+cloudflare/payload.mjs
+cloudflare/dashboard-worker.mjs
+.dev.vars

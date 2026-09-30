@@ -16,9 +16,18 @@ Features start disabled except Remove scoping. Enable Rage and Auto fire to use 
 
 ## Private sharing
 
+The access-key URL loader is deployed at `https://romordial-loader.asherethan24.workers.dev/loader.lua`.
+
+```lua
+getgenv().ROMORDIAL_KEY = "YOUR_INDIVIDUAL_KEY"
+loadstring(game:HttpGet("https://romordial-loader.asherethan24.workers.dev/loader.lua"))()
+```
+
+Keys are managed locally; server configuration contains only key hashes. The public loader never contains a key or the game script. See `cloudflare/README.md` for creating/revoking keys and deploying updates. Updating GitHub alone does not update the Worker: redeploy after changing the source.
+
 Invite selected GitHub accounts through the repository's Settings → Collaborators. They can download the files after accepting the invitation.
 
-Private raw GitHub URLs require authentication. Do not embed access tokens in a loader. Local loading is the supported private-sharing method.
+Private raw GitHub URLs require authentication. Do not embed GitHub access tokens in a loader. Use the key-controlled Worker or local loading.
 
 ## Verification
 
